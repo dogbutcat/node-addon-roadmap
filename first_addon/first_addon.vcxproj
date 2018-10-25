@@ -78,6 +78,8 @@
     <TargetExt>.node</TargetExt>
     <IncludePath>$(NODE_HOME)\src;$(NODE_HOME)\deps\v8\include;$(NODE_HOME)\deps\uv\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(NODE_HOME)\$(Configuration);$(LibraryPath)</LibraryPath>
+    <IntDir>build\$(Configuration)\</IntDir>
+    <OutDir>build\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <TargetExt>.node</TargetExt>
@@ -88,6 +90,8 @@
     <TargetExt>.node</TargetExt>
     <IncludePath>$(NODE_HOME)\src;$(NODE_HOME)\deps\v8\include;$(NODE_HOME)\deps\uv\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(NODE_HOME)\$(Configuration);$(LibraryPath)</LibraryPath>
+    <IntDir>build\$(Configuration)\</IntDir>
+    <OutDir>build\$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -107,7 +111,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>BUILDING_NODE_EXTENSION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -138,7 +142,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>BUILDING_NODE_EXTENSION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -154,7 +158,7 @@
     <ClInclude Include="include\main.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include=".gitignore" />
+    <None Include="binding.gyp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
