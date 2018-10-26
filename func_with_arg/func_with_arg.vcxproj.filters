@@ -26,6 +26,5 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="binding.gyp" />
-    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>
